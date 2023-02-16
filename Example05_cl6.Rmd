@@ -1,0 +1,45 @@
+---
+title: "Mi primer dashboard usando FlexDashboard"
+author: "Ricardo Guanilo"
+date: "2023-02-16"
+output: flexdashboard::flex_dashboard
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(flexdashboard)
+library(ggplot2)
+```
+
+Dataset : Titanic
+-----------------------------------------------
+
+### Diagrama de Barras
+```{r CargaDatos,echo=FALSE,message=FALSE,warning=FALSE}
+titanic <- read.csv("https://raw.githubusercontent.com/robintux/Datasets4StackOverFlowQuestions/master/titanic.csv")
+colnames(titanic)
+titanic$Survived <- as.factor(titanic$Survived)
+titanic$Pclass <- as.factor(titanic$Pclass)
+```
+
+```{r Plot1,echo=FALSE,message=FALSE,warning=FALSE}
+ggplot(data = titanic,mapping= aes(x=Survived, fill = Survived))+
+  geom_bar(position = "dodge")
+```
+
+Modelos
+-----------------------------------------------
+### Modelo1
+```{r}
+# Algo de codigo en R
+```
+
+### Modelo2
+```{r}
+# Algo de codigo en R
+```
+
+
+
+
+
